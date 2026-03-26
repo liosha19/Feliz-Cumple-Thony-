@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Feliz Cumpleaños Thony 💚</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c7744);
+  color: white;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1 {
+  margin-top: 50px;
+  font-size: 3em;
+  animation: brillo 2s infinite alternate;
+}
+
+p {
+  font-size: 1.5em;
+  margin: 20px;
+}
+
+@keyframes brillo {
+  from { text-shadow: 0 0 10px #00ff88; }
+  to { text-shadow: 0 0 25px #00ff88, 0 0 40px #00ff88; }
+}
+
+button {
+  background: #00ff88;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background: #00cc6a;
+}
+
+.heart {
+  position: absolute;
+  color: #00ff88;
+  font-size: 20px;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh); opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎉 Feliz Cumpleaños Thony Arthus 💚</h1>
+
+<p>
+Aunque hoy no te sientas tan bien...  
+quiero que recuerdes que eres una persona increíble 🌿  
+y mereces toda la felicidad del mundo.
+</p>
+
+<p>
+Este día es tuyo 💚  
+y todo va a mejorar, te lo prometo ✨
+</p>
+
+<button onclick="crearCorazones()">Haz clic aquí 💚</button>
+
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+</audio>
+
+<script>
+function crearCorazones() {
+  for (let i = 0; i < 20; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💚";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+}
+</script>
+
+</body>
+  </html>
