@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Thony Arthus 💚</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f9b0f, #000000);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  margin-top: 40px;
+  font-size: 45px;
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88;
+}
+
+p {
+  font-size: 20px;
+  width: 85%;
+  margin: auto;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background: #00ff88;
+  color: black;
+  cursor: pointer;
+  box-shadow: 0 0 20px #00ff88;
+}
+
+.secretBtn {
+  position: absolute;
+  top: 70%;
+  left: 45%;
+  padding: 12px 25px;
+  border-radius: 20px;
+  border: none;
+  background: white;
+  color: black;
+  cursor: pointer;
+  display: none;
+}
+
+.message {
+  display: none;
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+.secret {
+  display: none;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #00ffcc;
+}
+
+.effect {
+  position: absolute;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  from {transform: translateY(100vh);}
+  to {transform: translateY(-10vh);}
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🎉 Feliz cumpleaños Thony Arthus 💚</h1>
+
+<p>
+Ey tú 😌 el cumpleañero serio…  
+Hoy no te me escapas de sonreír 😏
+</p>
+
+<button class="btn" onclick="start()">Tócame 😏🎁</button>
+
+<button class="secretBtn" id="secretBtn" 
+onmouseover="moveButton()" 
+onclick="showSecret()">Lee esto 👀</button>
+
+<p class="message" id="msg">
+😎 BOOM 💥 <br><br>
+Eres una excelente persona 💚  
+y un buen amigo de verdad 🌿✨<br><br>
+
+Edición limitada 😌🔥<br><br>
+
+Ya deja el drama un chin 😏  
+y suelta esa sonrisa 💫
+</p>
+
+<p class="secret" id="secret">
+💚 Lo lograste 😂 <br><br>
+Sabía que ibas a insistir 😏🔥<br><br>
+
+Oye, en serio…  
+vales muchísimo y hay gente que te quiere pila 💚✨
+</p>
+
+<audio id="music" src="https://files.catbox.moe/0p0k0q.mp3"></audio>
+
+<script>
+function start() {
+  document.getElementById("music").play();
+  document.getElementById("msg").style.display = "block";
+  document.getElementById("secretBtn").style.display = "block";
+
+  const emojis = ["💚","✨","🌿","🎉","💫"];
+
+  for (let i = 0; i < 40; i++) {
+    let effect = document.createElement("div");
+    effect.classList.add("effect");
+    effect.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+    effect.style.left = Math.random() * 100 + "vw";
+    effect.style.animationDuration = (Math.random() * 5 + 3) + "s";
+    effect.style.fontSize = (Math.random() * 20 + 15) + "px";
+    document.body.appendChild(effect);
+  }
+
+  for (let i = 0; i < 80; i++) {
+    let confetti = document.createElement("div");
+    confetti.classList.add("effect");
+    confetti.innerHTML = "🎆";
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    confetti.style.fontSize = (Math.random() * 15 + 10) + "px";
+    document.body.appendChild(confetti);
+  }
+}
+
+function moveButton() {
+  let btn = document.getElementById("secretBtn");
+  let x = Math.random() * (window.innerWidth - 150);
+  let y = Math.random() * (window.innerHeight - 100);
+
+  btn.style.left = x + "px";
+  btn.style.top = y + "px";
+}
+
+function showSecret() {
+  document.getElementById("secret").style.display = "block";
+}
+</script>
+
+</body>
+                            </html>
